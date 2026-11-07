@@ -41,3 +41,4 @@ stop = set(stopwords.words("english"))
 ## Related
 - [Stemming vs lemmatization](stemming-vs-lemmatization.md)
 - [One-hot and bag of words](one-hot-and-bag-of-words.md)
+- [Subword tokenization (LLMs)](../../ai-engineering/llms/fundamentals/subword-tokenization.md)
