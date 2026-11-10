@@ -32,3 +32,5 @@
 - frontend/react/forms → skill: react · region: frontend (suggested)
 - frontend/react/routing → skill: react · region: frontend (suggested)
 - frontend/nextjs → skill: next.js · region: frontend (suggested)
+- sql/schema → skill: sql · region: databases (suggested)
+- sql/queries → skill: sql · region: databases (suggested)
