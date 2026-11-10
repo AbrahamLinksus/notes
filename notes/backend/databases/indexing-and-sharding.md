@@ -2,13 +2,14 @@
 
 > An index is an extra data structure that makes lookups on one table fast. Sharding splits a huge database into non-overlapping pieces across machines, which is horizontal scaling.
 
-studied: 2026-11-07 · status: done · source: Backend.pdf (p. 33)
+studied: 2026-11-07 · status: done · source: Backend.pdf (p. 33); SQL.pdf (pp. 6–7)
 
 ## Key ideas
 - **Index:**
-  - a data structure built on top of a table to **speed up data retrieval**
-  - created using **B-trees** or **LSM trees**
+  - a data structure built on top of a table to **speed up data retrieval**: it finds the **exact location** of the data quickly
+  - created using **B-trees / B+ trees**, **hash** structures, or **LSM trees**
   - it speeds up reads without changing what data you have
+  - an index column **can hold duplicate values**: uniqueness is **not implied automatically** (you need a `UNIQUE` index/constraint for that)
 - **Sharding:**
   - splits a huge DB into **multiple non-overlapping DBs** called **shards**
   - lets you **store more data** and **reduce latency**, since each shard is smaller and serves part of the load
@@ -35,11 +36,14 @@ query for user 7 → shard 1 only
 
 ## Pitfalls
 - Indexes aren't free: every write must also update the index, and they take space.
+- `CREATE INDEX` doesn't stop duplicates. Use `CREATE UNIQUE INDEX` or a `UNIQUE` constraint if you need that.
 - Queries that span shards (e.g. joins across users) become hard and slow.
 - Re-sharding with plain modulo moves most rows. That's the same problem consistent hashing solves for caches.
 
 ## Related
 - [N+1 problem](n-plus-one-problem.md)
+- [Query lifecycle](query-lifecycle.md)
+- [Database storage internals](database-storage-internals.md)
 - [Database migrations](database-migrations.md)
 - [Cache types](../caching/cache-types.md)
 - [Monolith vs microservices](../architecture/monolith-vs-microservices.md)
