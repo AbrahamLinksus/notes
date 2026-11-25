@@ -42,6 +42,13 @@ df[["income"]] = StandardScaler().fit_transform(df[["income"]])  # μ0 σ1
 - Normalisation and standardisation aren't the same thing. Pick based on the model and the data's shape.
 
 ## Related
+- [DS lifecycle and data analysis](ds-lifecycle-and-data-analysis.md)
+- [Types of missing data](types-of-missing-data.md)
+- [Missing value imputation](missing-value-imputation.md)
+- [Handling imbalanced datasets](handling-imbalanced-data.md)
+- [Outlier sensitivity by model](outlier-sensitivity-by-model.md)
+- [Scalers](scalers-standard-minmax-robust.md)
+- [Gaussian transformations](gaussian-transformations.md)
 - [Percentiles and outliers](../statistics/descriptive/percentiles-and-outliers.md)
 - [Z-score and standard normal](../statistics/probability/z-score-and-standard-normal.md)
 - [K-nearest neighbours](../ml/supervised/k-nearest-neighbours.md)
