@@ -2,7 +2,7 @@
 
 > To flag outliers, use IQR fences (Q1 − 1.5·IQR, Q3 + 1.5·IQR) on skewed data and |z| > 3 on normal data, so check the shape of the distribution before picking a method.
 
-studied: 2026-11-07 · status: done · source: Data_Science.pdf (pp. 48, 54–55)
+studied: 2026-11-25 · status: done · source: Data_Science.pdf (pp. 48, 54–55); Data_Boring.pdf (pp. 7–8)
 
 ## Key ideas
 - **Percentile**: the value below which a given percentage of the observations fall.
@@ -17,6 +17,11 @@ studied: 2026-11-07 · status: done · source: Data_Science.pdf (pp. 48, 54–55
 - **Z-score method**:
   - z = (x − mean) / SD. Flag the point if **|z| > 3** (an empirical rule).
   - It **assumes a normal distribution**.
+- **Gaussian column, bounds form**:
+  - Use a box plot to see the outliers, then compute `upper = mean + 3·std` and `lower = mean − 3·std`.
+  - If a negative lower bound makes no sense (e.g. age), use `max(0, lower)`.
+  - Upper/lower bounds are enough for Gaussian distributions.
+- **Skewed column**: compute the IQR, find the upper and lower fences, then remove what falls outside.
 
 ## Example
 Data: 1, 2, 3, 4, 5, 6, 7, 8, 30
